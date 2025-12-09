@@ -2,13 +2,17 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <title>💬 Мессенджер</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="app">
-        <!-- Экран регистрации -->
+        <!-- Экран регистрации (для десктопа) -->
         <div id="registerScreen" class="register-screen">
             <div class="register-card">
                 <div class="register-emoji">💬</div>
@@ -16,6 +20,17 @@
                 <p>Введите ваше имя для входа</p>
                 <input type="text" id="userName" placeholder="Ваше имя" class="register-input" autofocus>
                 <button id="registerButton" class="register-button">Войти</button>
+            </div>
+        </div>
+        
+        <!-- Экран ввода имени (для мобильных) -->
+        <div id="mobileNameScreen" class="mobile-name-screen" style="display: none;">
+            <div class="mobile-name-card">
+                <div class="mobile-name-emoji">💬</div>
+                <h1>Добро пожаловать!</h1>
+                <p>Введите ваше имя</p>
+                <input type="text" id="mobileUserName" placeholder="Ваше имя" class="mobile-name-input" autofocus>
+                <button id="mobileRegisterButton" class="mobile-register-button">Продолжить</button>
             </div>
         </div>
 
