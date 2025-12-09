@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💬 Мессенджер</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Экран регистрации -->
+        <div id="registerScreen" class="register-screen">
+            <div class="register-card">
+                <div class="register-emoji">💬</div>
+                <h1>Добро пожаловать!</h1>
+                <p>Введите ваше имя для входа</p>
+                <input type="text" id="userName" placeholder="Ваше имя" class="register-input" autofocus>
+                <button id="registerButton" class="register-button">Войти</button>
+            </div>
+        </div>
+
+        <!-- Главный экран -->
+        <div id="mainScreen" class="main-screen" style="display: none;">
+            <!-- Основная область чата (без боковой панели) -->
+            <div class="chat-main full-width">
+                <!-- Заголовок чата -->
+                <div class="chat-header">
+                    <div class="chat-info">
+                        <h2 id="chatTitle">Общий чат</h2>
+                    </div>
+                    <div class="online-badge">
+                        <span class="online-dot"></span>
+                        <span id="onlineCount">0</span> онлайн
+                    </div>
+                </div>
+
+                <!-- Область сообщений -->
+                <div id="messages-area" class="messages-area"></div>
+
+                <!-- Ввод сообщения -->
+                <div class="message-input-area">
+                    <input 
+                        type="text" 
+                        id="messageInput" 
+                        placeholder="Напишите сообщение..." 
+                        class="message-input"
+                        autocomplete="off"
+                    >
+                    <button id="sendButton" class="btn-send">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно удалено, используется общий чат -->
+
+    <script src="script.js"></script>
+</body>
+</html>
