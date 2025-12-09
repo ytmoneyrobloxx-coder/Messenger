@@ -123,6 +123,8 @@ function broadcastOnlineCount() {
     });
 }
 
-server.listen(3000, () => {
-    console.log('\n✅ Мессенджер запущен на http://localhost:3000\n');
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
