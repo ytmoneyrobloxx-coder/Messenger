@@ -15,8 +15,14 @@ app.use((req, res, next) => {
     next();
 });
 
-// Сервируем статические файлы
+// Раздача статических файлов
+app.use(express.static('public'));
 app.use(express.static(path.join(__dirname)));
+
+// Главная страница
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Хранилище
 const users = new Map(); // userId → {name, ws}
@@ -123,8 +129,8 @@ function broadcastOnlineCount() {
     });
 }
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log("Server started on port " + PORT);
 });
